@@ -1,0 +1,53 @@
+{
+    "name": "niladam/cart",
+    "description": "Cart package",
+    "keywords": [
+        "niladam",
+        "cart"
+    ],
+    "homepage": "https://github.com/niladam/cart",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Madalin Tache",
+            "email": "niladam@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8|^9|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Niladam\\Cart\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Niladam\\Cart\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Niladam\\Cart\\CartServiceProvider"
+            ],
+            "aliases": {
+                "Cart": "Niladam\\Cart\\CartFacade"
+            }
+        }
+    }
+}
