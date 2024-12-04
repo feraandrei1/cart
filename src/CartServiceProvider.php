@@ -1,6 +1,6 @@
 <?php
 
-namespace Niladam\Cart;
+namespace Feraandrei1\Cart;
 
 use Illuminate\Support\ServiceProvider;
 

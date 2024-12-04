@@ -1,6 +1,6 @@
 <?php
 
-namespace Niladam\Cart\Traits;
+namespace Feraandrei1\Cart\Traits;
 
 trait Buyable
 {

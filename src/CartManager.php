@@ -1,6 +1,6 @@
 <?php
 
-namespace Niladam\Cart;
+namespace Feraandrei1\Cart;
 
 use App\Models\Product;
 use App\Models\ProductPackage;
@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Niladam\Cart\Models\Cart;
-use Niladam\Cart\Models\CartItem;
+use Feraandrei1\Cart\Models\Cart;
+use Feraandrei1\Cart\Models\CartItem;
 
 use function collect;
 

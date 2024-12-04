@@ -1,6 +1,6 @@
 <?php
 
-use Niladam\Cart\CartManager;
+use Feraandrei1\Cart\CartManager;
 
 if (! function_exists('cart')) {
     /**

@@ -1,12 +1,12 @@
 <?php
 
-namespace Niladam\Cart\Models;
+namespace Feraandrei1\Cart\Models;
 
 use App\Support\WeightCalculator;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Niladam\Cart\Traits\CartTotals;
+use Feraandrei1\Cart\Traits\CartTotals;
 
 class Cart extends Model
 {

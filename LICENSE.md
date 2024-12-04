@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) Madalin Tache
+Copyright (c) Andrei Feraru
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

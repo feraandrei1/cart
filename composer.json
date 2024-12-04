@@ -1,11 +1,11 @@
 {
-    "name": "feraandrei1/mertecom-cart",
+    "name": "feraandrei1/cart",
     "description": "Cart package",
     "keywords": [
         "feraandrei1",
-        "mertecom-cart"
+        "cart"
     ],
-    "homepage": "https://github.com/feraandrei1/mertecom-cart",
+    "homepage": "https://github.com/feraandrei1/cart",
     "license": "MIT",
     "type": "library",
     "authors": [

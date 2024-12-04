@@ -1,11 +1,11 @@
 <?php
 
-namespace Niladam\Cart;
+namespace Feraandrei1\Cart;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Niladam\Cart\Skeleton\SkeletonClass
+ * @see \Feraandrei1\Cart\Skeleton\SkeletonClass
  */
 class CartFacade extends Facade
 {

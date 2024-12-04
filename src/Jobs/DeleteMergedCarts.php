@@ -1,6 +1,6 @@
 <?php
 
-namespace Niladam\Cart\Jobs;
+namespace Feraandrei1\Cart\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Niladam\Cart\Models\Cart;
+use Feraandrei1\Cart\Models\Cart;
 
 class DeleteMergedCarts implements ShouldQueue, ShouldBeUnique
 {

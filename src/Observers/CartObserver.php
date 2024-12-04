@@ -1,15 +1,15 @@
 <?php
 
-namespace Niladam\Cart\Observers;
+namespace Feraandrei1\Cart\Observers;
 
-use Niladam\Cart\Models\Cart;
+use Feraandrei1\Cart\Models\Cart;
 
 class CartObserver
 {
     /**
      * Remove the cart items on cart deletion
      *
-     * @param  Niladam\Cart\Models\Cart $cart
+     * @param  Feraandrei1\Cart\Models\Cart $cart
      * @return void
      */
     public function deleting(Cart $cart)

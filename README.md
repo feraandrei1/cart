@@ -7,7 +7,7 @@ This is a package that can be easily plugged into our current Laravel projects t
 You can install the package via composer:
 
 ```bash
-composer require niladam/cart
+composer require feraandrei1/cart
 ```
 
 
@@ -15,7 +15,7 @@ composer require niladam/cart
 ### Migrate and publish the config files
 
 ```php
-php artisan vendor:publish --provider="Niladam\Cart\CartServiceProvider"
+php artisan vendor:publish --provider="Feraandrei1\Cart\CartServiceProvider"
 ```
 
 
@@ -75,11 +75,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
-If you discover any security related issues, please email niladam@gmail.com instead of using the issue tracker.
+If you discover any security related issues, please email feraandrei1@gmail.com instead of using the issue tracker.
 
 ## Credits
 
-- [Madalin Tache](https://github.com/niladam)
+- [Andrei Feraru](https://github.com/feraandrei1)
 - [All Contributors](../../contributors)
 
 ## License
