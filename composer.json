@@ -1,17 +1,17 @@
 {
-    "name": "niladam/cart",
+    "name": "feraandrei1/mertecom-cart",
     "description": "Cart package",
     "keywords": [
-        "niladam",
-        "cart"
+        "feraandrei1",
+        "mertecom-cart"
     ],
-    "homepage": "https://github.com/niladam/cart",
+    "homepage": "https://github.com/feraandrei1/mertecom-cart",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "Madalin Tache",
-            "email": "niladam@gmail.com",
+            "name": "Andrei Feraru",
+            "email": "feraandrei1@gmail.com",
             "role": "Developer"
         }
     ],
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Niladam\\Cart\\": "src"
+            "feraandrei1\\Cart\\": "src"
         },
         "files": [
             "src/helpers.php"
@@ -29,7 +29,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Niladam\\Cart\\Tests\\": "tests"
+            "feraandrei1\\Cart\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -43,10 +43,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Niladam\\Cart\\CartServiceProvider"
+                "feraandrei1\\Cart\\CartServiceProvider"
             ],
             "aliases": {
-                "Cart": "Niladam\\Cart\\CartFacade"
+                "Cart": "feraandrei1\\Cart\\CartFacade"
             }
         }
     }
