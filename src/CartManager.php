@@ -83,12 +83,10 @@ class CartManager
         }
 
         if ($this->cartCookie && $cart->cookie !== $this->cartCookie) {
-            logger('Updating the cart cookie from '.$cart->cookie.' to '.$this->cartCookie);
             $cart->update(['cookie' => $this->cartCookie]);
         }
 
         if ($this->user && $cart->auth_user !== $this->user->id) {
-            logger('Updating the cart user from '.$cart->auth_user.' to '.$this->user->id);
             $cart->update(['auth_user' => $this->user->id]);
         }
 
