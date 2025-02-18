@@ -39,7 +39,7 @@ class CartManager
     public function setCartIdToSession(): void
     {
         $cookie = $this->cartCookie ?? $this->setCartCookie();
-        logger('Setting cart cookie session to '.$cookie);
+
         session()->put($this->cookieName, $cookie);
     }
 
@@ -83,12 +83,10 @@ class CartManager
         }
 
         if ($this->cartCookie && $cart->cookie !== $this->cartCookie) {
-            logger('Updating the cart cookie from '.$cart->cookie.' to '.$this->cartCookie);
             $cart->update(['cookie' => $this->cartCookie]);
         }
 
         if ($this->user && $cart->auth_user !== $this->user->id) {
-            logger('Updating the cart user from '.$cart->auth_user.' to '.$this->user->id);
             $cart->update(['auth_user' => $this->user->id]);
         }
 
@@ -146,8 +144,6 @@ class CartManager
         $callee = debug_backtrace()[1]['function'];
 
         $this->cartCookie = Str::random(20);
-
-        logger(sprintf('Setting cart cookie to %s from %s', $this->cartCookie, $callee));
 
         Cookie::queue(cookie()->forever(name: $this->cookieName, value: $this->cartCookie));
 
