@@ -2,7 +2,7 @@
 
 namespace Feraandrei1\Cart\Models;
 
-use App\Support\WeightCalculator;
+use Feraandrei1\Cart\Support\WeightCalculator;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;

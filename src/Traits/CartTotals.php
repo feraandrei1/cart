@@ -2,7 +2,7 @@
 
 namespace Feraandrei1\Cart\Traits;
 
-use App\Support\ShippingCalculator;
+use Feraandrei1\Cart\Support\ShippingCalculator;
 use App\User;
 
 trait CartTotals
