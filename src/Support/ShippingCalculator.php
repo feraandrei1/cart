@@ -2,6 +2,9 @@
 
 namespace Feraandrei1\Cart\Support;
 
+use Feraandrei1\Cart\Models\Cart;
+use App\Models\Product;
+
 class ShippingCalculator
 {
     protected float $shippingDefaultCost = 17;
@@ -15,36 +18,51 @@ class ShippingCalculator
     protected int $fragileCost = 5;
 
     public function __construct(
+        protected Cart $cart,
         protected float $amount,
         protected float $weight,
         protected bool $isFragile = false,
-    ) {
-    }
+    ) {}
 
     public function getCosts(): float
     {
-        $cost = $this->isOverWeight() ? $this->getOverWeightCost() : $this->getRegularCost();
+        if (! $this->hasOversizedProducts()) {
+            $cost = $this->getRegularCost();
+        }
+
+        if ($this->hasOversizedProducts()) {
+            $cost = $this->getOversizedCost();
+        }
 
         $cost += $this->isFragile ? $this->fragileCost : 0;
 
         return $this->getFormattedCost($cost);
     }
 
-    protected function isOverWeight(): bool
+    protected function hasOversizedProducts(): bool
     {
-        return $this->weight >= 150;
-    }
-
-    protected function getOverWeightCost(): float
-    {
-        return ($this->weight * $this->bulkPricePerKg) - ($this->amount * $this->percentageAmount);
+        return $this->cart->items()
+            ->where('model_type', Product::class)
+            ->whereHas('product', fn($query) => $query->where('oversized', true))
+            ->exists();
     }
 
     protected function getRegularCost(): float
     {
         return ($this->weight * $this->pricePerKg) - ($this->amount * $this->percentageAmount) + $this->shippingDefaultCost;
+    }
 
-        return $this->weight - ($this->amount * $this->percentageAmount) + $this->shippingDefaultCost;
+    protected function getOversizedCost(): float
+    {
+        $regularCost = $this->getRegularCost();
+
+        $totalOversizedShipping = $this->cart->items()
+            ->where('model_type', Product::class)
+            ->whereHas('model', fn($query) => $query->where('oversized', true))
+            ->get()
+            ->sum(fn($item) => $item->quantity * $item->product->oversized_shipping_price);
+
+        return $regularCost + $totalOversizedShipping;
     }
 
     protected function getFormattedCost(float $cost): float

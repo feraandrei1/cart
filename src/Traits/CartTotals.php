@@ -66,7 +66,7 @@ trait CartTotals
 
         $orderAmount = $this->subtotal;
 
-        $this->shipping_charges = (new ShippingCalculator($orderAmount, $this->total_weight, $this->determineFragility()))->getCosts();
+        $this->shipping_charges = (new ShippingCalculator($this, $orderAmount, $this->total_weight, $this->determineFragility()))->getCosts();
 
         return $this;
     }
